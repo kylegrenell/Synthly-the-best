@@ -62,27 +62,23 @@
 	    // highNoteControl = document.getElementById('high-note-control');
 	
 	    context = new AudioContext();
-	    Theremin.setupEventListeners();
+	    Theremin.allEventListeners();
 	  };
 	  
 	  // Event Listeners
-	  Theremin.setupEventListeners = function() {
-	    document.body.addEventListener('touchmove', function(event) {
-	      event.preventDefault();
-	    }, false);
-	  
+	  Theremin.allEventListeners = function() {
 	    thereminCanvas.addEventListener('mousedown', Theremin.playSound);
-	    thereminCanvas.addEventListener('touchstart', Theremin.playSound);
-	  
 	    thereminCanvas.addEventListener('mouseup', Theremin.stopSound);
-	    document.addEventListener('mouseleave', Theremin.stopSound);
-	    thereminCanvas.addEventListener('touchend', Theremin.stopSound);
 	  };
 	  
+	
 	  Theremin.playSound = function(event) {
 	    oscillator = context.createOscillator();
 	    gainNode = context.createGain();
-	    oscillator.type = 'triangle';
+	    oscillator.type = 'sine'; // sine is the most thermin like spooky one yo
+	    // oscillator.type = 'triangle';
+	    // oscillator.type = 'square';
+	    // oscillator.type = 'sawtooth';
 	    gainNode.connect(context.destination);
 	    oscillator.connect(gainNode);
 	  
@@ -90,17 +86,17 @@
 	    oscillator.start(0);
 	  
 	    thereminCanvas.addEventListener('mousemove', Theremin.updateFrequency);
-	    thereminCanvas.addEventListener('touchmove', Theremin.updateFrequency);
 	    thereminCanvas.addEventListener('mouseout', Theremin.stopSound);
 	  };
 	   
+	
 	  Theremin.stopSound = function(event) {
 	    oscillator.stop(0);
 	    thereminCanvas.removeEventListener('mousemove', Theremin.updateFrequency);
-	    thereminCanvas.removeEventListener('touchmove', Theremin.updateFrequency);
 	    thereminCanvas.removeEventListener('mouseout', Theremin.stopSound);
 	  };
 	   
+	
 	  Theremin.calculateNote = function(posX) {
 	    var noteDifference = highNote - lowNote;
 	    var noteOffset = (noteDifference / thereminCanvas.offsetWidth) * (posX - thereminCanvas.offsetLeft);
@@ -113,6 +109,7 @@
 	    return volumeLevel;
 	  };
 	  
+	
 	  Theremin.calculateFrequency = function(x, y) {
 	    var noteValue = Theremin.calculateNote(x);
 	    var volumeValue = Theremin.calculateVolume(y);
@@ -124,21 +121,19 @@
 	    volumeLabel.innerHTML = Math.floor(volumeValue * 100) + '%';
 	  };
 	  
+	
 	  Theremin.updateFrequency = function(event) {
-	    if (event.type == 'mousedown' || event.type == 'mousemove') {
+	    if (event.type == 'mousedown' || event.type == 'mousemove') 
+	    {
 	      Theremin.calculateFrequency(event.x, event.y);
-	    } else if (event.type == 'touchstart' || event.type == 'touchmove') {
-	      var touch = event.touches[0];
-	      Theremin.calculateFrequency(touch.pageX, touch.pageY);
-	    }
+	    } 
 	  };
-	  
 	  return Theremin;
 	})();
 	
 	// Initialize the page.
 	window.onload = function() {
-	  var synthPad = new Theremin();
+	  var theremin = new Theremin();
 	}
 
 
