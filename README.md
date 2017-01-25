@@ -1,8 +1,8 @@
 # Web Audio API - Project 4 ~ and final project at CodeClan :(
 
-# I used vanilla JS to learn the Web Audio API.
+I used vanilla JS to learn the Web Audio API.
 
-# See the docs here for more info: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API#Data_analysis_and_visualisation">Web Audio API</a>
+See the docs here for more info: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API#Data_analysis_and_visualisation">Web Audio API</a>
 
 After reading through and following the docs I decided to stick to vanilla JS as it was the best way to take in all the (many, many) different nodes, contexts, oscillators, filters, panners, waves, frequencies, streams, destinations.... the list goes on. I felt it best to engage in the docs before buiding it in React using a library.
 
