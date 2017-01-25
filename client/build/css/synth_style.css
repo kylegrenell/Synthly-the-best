@@ -1,0 +1,83 @@
+html, body {
+  background-color: rgb(213, 236, 216);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.keyboard{
+  /*border: 1px solid snow;*/
+}
+
+.keyboard_row {
+  display: flex;
+}
+
+.keyboard_key {
+  display: block;
+  height: 170px;
+  width: 12.5%;
+  flex-grow: 1;
+  text-align: center;
+  line-height: 100px;
+  font-size: 15px;
+  margin: 5px;
+  border-radius: 2px;
+  background: white;
+  color: #0074D9;
+}
+
+.keyboard_key.is-down {
+  background: pink;
+  color: black;
+}
+
+#heading{
+  font-size: 40px;
+  padding: none;
+  margin: 20px;
+  color: white;
+}
+
+.menu-style {
+    border: 2px solid snow;
+    border-width: 1px 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: black;
+}
+
+.menu-style li {
+    display: inline;
+}
+
+.menu-style a {
+    display: inline-block;
+    padding: 10px;
+}
+
+a:link {
+  color: pink; 
+  text-decoration: none;
+  background-color: transparent; 
+}
+
+a:visited {
+  color: pink; 
+  background-color: transparent; 
+  text-decoration: none
+
+}
+a:hover {
+  color: black; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:active {
+  color: black; 
+  background-color: transparent; 
+  text-decoration: none;
+}
