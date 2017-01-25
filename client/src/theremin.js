@@ -43,15 +43,15 @@ var Theremin = (function(){
     Theremin.updateFrequency(event);
     oscillator.start(0);
   
-    thereminCanvas.addEventListener('mousemove', Theremin.updateFrequency);
-    thereminCanvas.addEventListener('mouseout', Theremin.stopSound);
+    thereminCanvas.addEventListener('mouseup', Theremin.updateFrequency);
+    thereminCanvas.addEventListener('mousedown', Theremin.stopSound);
   };
    
 
   Theremin.stopSound = function(event) {
     oscillator.stop(0);
-    thereminCanvas.removeEventListener('mousemove', Theremin.updateFrequency);
-    thereminCanvas.removeEventListener('mouseout', Theremin.stopSound);
+    thereminCanvas.removeEventListener('mouseup', Theremin.updateFrequency);
+    thereminCanvas.removeEventListener('mousedown', Theremin.stopSound);
   };
    
   // position of the cursor on the pad determines note frequency
@@ -80,11 +80,10 @@ var Theremin = (function(){
     volumeLabel.innerHTML = Math.floor(volumeValue * 100) + '%';
   };
   
-
-  Theremin.updateFrequency = function(event) {
-    if (event.type == 'mousedown' || event.type == 'mousemove') 
-    {
-      Theremin.calculateFrequency(event.x, event.y);
+  // check if a mouse used and extract the position of the cursor from the event data and pass this to the calculateFrequency() function.
+  Theremin.updateFrequency = function(e){
+    if (event.type == 'mousedown'){
+      Theremin.calculateFrequency(e.x, e.y);
     } else {
   return Theremin;
   };
