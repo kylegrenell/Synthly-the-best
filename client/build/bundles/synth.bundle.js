@@ -56,6 +56,7 @@
 	
 	// an octave is divided into twelve semitones. An octave is simply the doubling of a frequency. To calculate the frequency of some number of semitones from a reference tone, you can use the following formula:
 	// freq = baseFreq × 2(numSemitones ÷ 12)
+	// Math.pow() function returns the base to the exponent power, that is, baseexponent.
 	var keyboardBaseSound = Math.pow(2, 1/12);
 	
 	function getFrequency(noteName){

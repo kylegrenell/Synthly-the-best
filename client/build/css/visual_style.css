@@ -1,7 +1,10 @@
 body {
-  background-color: rgb(233, 33, 45);
+  /*trainspotting colours*/
+  background-color: rgb(245, 147, 50); 
   color: black;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 40px solid white;
+  height: 100%;
 }
 
 .menu-style {
