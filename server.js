@@ -14,8 +14,8 @@ app.get('/synth/theremin', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/theremin.html'));
 });
 
-app.get('/synth/stream/visuals', function (req, res) {
-  res.sendFile(path.join(__dirname + '/client/build/theremin.html'));
+app.get('/synth/theremin/visual', function (req, res) {
+  res.sendFile(path.join(__dirname + '/client/build/visual.html'));
 });
 
 app.use(express.static('client/build'));

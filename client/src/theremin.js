@@ -1,7 +1,3 @@
-// Initialize the page.
-window.onload = function() {
-  var theremin = new Theremin();
-}
 
 // defining a new module called Theremin. Contains all variables + functions for the theremin
 var Theremin = (function(){
@@ -81,12 +77,16 @@ var Theremin = (function(){
   };
   
   // check if a mouse used and extract the position of the cursor from the event data and pass this to the calculateFrequency() function.
-  Theremin.updateFrequency = function(e){
-    if (event.type == 'mousedown'){
-      Theremin.calculateFrequency(e.x, e.y);
-    } else {
-  return Theremin;
-  };
+    Theremin.updateFrequency = function(event) {
+      if (event.type == 'mousedown'){
+        Theremin.calculateFrequency(event.x, event.y);
+      } 
+    };    
+    // Export Theremin.
+    return Theremin;
+  });
 
-});
-
+// Initialize the page.
+window.onload = function() {
+  var theremin = new Theremin();
+}
