@@ -3,6 +3,7 @@ window.onload = function() {
   var theremin = new Theremin();
 }
 
+// defining a new module called Theremin. Contains all variables + functions for the theremin
 var Theremin = (function(){
   var thereminCanvas;
   var frequencyLabel;
@@ -18,8 +19,6 @@ var Theremin = (function(){
     thereminCanvas = document.getElementById('theremin');
     frequencyLabel = document.getElementById('frequency');
     volumeLabel = document.getElementById('volume');
-    // highNoteControl = document.getElementById('high-note-control');
-
     context = new AudioContext();
     Theremin.allEventListeners();
   };
@@ -55,9 +54,10 @@ var Theremin = (function(){
     thereminCanvas.removeEventListener('mouseout', Theremin.stopSound);
   };
    
-
+  // position of the cursor on the pad determines note frequency
   Theremin.calculateNote = function(posX) {
-    var noteDifference = highNote - lowNote;
+    var noteDifference = highNote - lowNote; // set to canvas size
+    // calculates what frequency value is represented by 1 pixel. multiplied by the position of the cursor on the pad to give the value that should be added to lowNote to produce the final frequency.
     var noteOffset = (noteDifference / thereminCanvas.offsetWidth) * (posX - thereminCanvas.offsetLeft);
     return lowNote + noteOffset;
   };

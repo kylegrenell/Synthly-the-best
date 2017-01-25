@@ -1,7 +1,8 @@
 var config = {
   entry: {
     synth: "./src/index.js",
-    theremin: "./src/theremin.js"
+    theremin: "./src/theremin.js",
+    visual: "./src/visual.js"
   },
   output:{
     filename: "[name].bundle.js",
