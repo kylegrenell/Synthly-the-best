@@ -86,8 +86,8 @@
 	    blue = random() * 255 >> 0;
 	
 	    ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
-	    ctx.fillRect(i, canvas.height - freqByteData[i], 30, canvas.height); 
-	    ctx.strokeRect(i, canvas.height - freqByteData[i], 30, canvas.height); 
+	    ctx.fillRect(i, canvas.height - freqByteData[i], 25, canvas.height); 
+	    ctx.strokeRect(i, canvas.height - freqByteData[i], 25, canvas.height); 
 	  }
 	}
 

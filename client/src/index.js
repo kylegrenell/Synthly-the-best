@@ -28,6 +28,7 @@ var keyCodeNotes =
 
 var tones = {};
 
+// assigning each unique keycode the sounds using osc, gain
 for(var keyCode in keyCodeNotes){
   var osc = audio.createOscillator();
   var noteName = keyCodeNotes[keyCode];
@@ -80,18 +81,3 @@ function changeKeyElem(noteName, keyChangeEvent){
   key.classList[keyChangeEvent]('is-down');
 }
 
-
-
-var typeSelect = document.getElementById('type-select');
-typeSelect.addEventListener('change', function(){
-  changeType(typeSelect.value);
-});
-// this sets initial type
-changeType(typeSelect.value);
-
-function changeType(type){
-  for(var keyCode in tones ){
-    var tone = tones[keyCode];
-    tone.osc.type = type;
-  }
-}
