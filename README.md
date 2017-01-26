@@ -15,3 +15,4 @@ Overall, a fun little app that I plan to expand on with more functionality for t
 # Thanks CodeClan, it's been synthly the best.
 
 <img src="http://i.imgur.com/RG7vtnf.png"></img>
+<img src="http://i.imgur.com/ahCVQOY.png"></img>
