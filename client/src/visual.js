@@ -1,9 +1,9 @@
 var analyser, canvas, ctx;
 
 window.onload = function(){
-  canvas = document.createElement('canvas');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas = document.querySelector('canvas');
+  canvas.width = window.innerWidth/2;
+  canvas.height = window.innerHeight/2;
   document.body.appendChild(canvas);
   ctx = canvas.getContext('2d');
 
@@ -40,7 +40,7 @@ function draw(){
     blue = random() * 255 >> 0;
 
     ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
-    ctx.fillRect(i, canvas.height - freqByteData[i], 10, canvas.height); 
-    ctx.strokeRect(i, canvas.height - freqByteData[i], 10, canvas.height); 
+    ctx.fillRect(i, canvas.height - freqByteData[i], 30, canvas.height); 
+    ctx.strokeRect(i, canvas.height - freqByteData[i], 30, canvas.height); 
   }
 }
