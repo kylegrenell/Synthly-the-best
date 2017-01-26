@@ -58,6 +58,7 @@ a:active {
 }
 
 .floating{
+  opacity: 0.9;
   text-align: justify;
   float: center;
   animation-name: Floatingx;
@@ -66,7 +67,8 @@ a:active {
   animation-timing-function: ease-in-out;
   margin-left: 30px;
   margin-right: 30px;
-  margin-top: 5px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 @keyframes Floatingx{

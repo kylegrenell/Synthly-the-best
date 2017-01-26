@@ -1,7 +1,7 @@
 var analyser, canvas, ctx;
 
 window.onload = function(){
-  canvas = document.querySelector('canvas');
+  canvas = document.createElement('canvas');
   canvas.width = window.innerWidth/2;
   canvas.height = window.innerHeight/2;
   document.body.appendChild(canvas);
