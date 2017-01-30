@@ -85,35 +85,34 @@
 	  osc.start();
 	  gain.connect(audio.destination);
 	
-	  var tone = 
+	// pitch takes the note, osc and gain 
+	  var pitch = 
 	  {
 	    noteName: noteName, 
 	    osc: osc, 
 	    gain: gain
 	  };
 	
-	  tones[keyCode] = tone;
+	  tones[keyCode] = pitch;
 	}
 	
 	document.addEventListener('keydown', function(e){
-	  var tone = tones[e.keyCode];
-	  if(tone){
-	    tone.gain.gain.value = 2;
+	  var pitch = tones[e.keyCode];
+	  if(pitch){
+	    pitch.gain.gain.value = 2;
 	    event.preventDefault();
-	    changeKeyElem(tone.noteName, 'add');
+	    changeKeyElem(pitch.noteName, 'add');
 	  }
 	});
 	
 	document.addEventListener('keyup', function(e){
-	  var tone = tones[e.keyCode];
-	  if(tone){
-	    tone.gain.gain.value = 0;
+	  var pitch = tones[e.keyCode];
+	  if(pitch){
+	    pitch.gain.gain.value = 0;
 	    event.preventDefault();
-	    changeKeyElem(tone.noteName, 'remove');
+	    changeKeyElem(pitch.noteName, 'remove');
 	  }
 	});
-	
-	
 	
 	function changeKeyElem(noteName, keyChangeEvent){
 	  var keyboardElem = document.querySelector('.keyboard');
@@ -126,7 +125,6 @@
 	  var key = keyboardElem.querySelector( '#' + noteName );
 	  key.classList[keyChangeEvent]('is-down');
 	}
-	
 
 
 /***/ }

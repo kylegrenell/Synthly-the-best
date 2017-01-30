@@ -27,7 +27,6 @@ var Theremin = (function(){
     }, false);
   
     thereminCanvas.addEventListener('mousedown', Theremin.playSound);
-  
     thereminCanvas.addEventListener('mouseup', Theremin.stopSound);
     document.addEventListener('mouseleave', Theremin.stopSound);
   };
@@ -35,9 +34,9 @@ var Theremin = (function(){
   Theremin.playSound = function(event) {
     oscillator = context.createOscillator();
     gainNode = context.createGain();
-    oscillator.type = 'sine'; // sine is the most thermin like spooky one yo
+    // oscillator.type = 'sine'; // sine is the most thermin like spooky one yo
     // oscillator.type = 'triangle';
-    // oscillator.type = 'square';
+    oscillator.type = 'square';
     // oscillator.type = 'sawtooth';
     gainNode.connect(context.destination);
     oscillator.connect(gainNode);
@@ -61,7 +60,6 @@ var Theremin = (function(){
     return lowNote + noteOffset;
   };
   
-
   Theremin.calculateVolume = function(posY) {
     var volumeLevel = 1 - (((100 / thereminCanvas.offsetHeight) * (posY - thereminCanvas.offsetTop)) / 100);
     return volumeLevel;
@@ -88,10 +86,7 @@ var Theremin = (function(){
   return Theremin;
 })();
 
-
-
 // Initialize the page.
 window.onload = function() {
   var theremin = new Theremin();
 }
-
