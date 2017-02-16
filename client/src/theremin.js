@@ -1,16 +1,16 @@
-var Theremin = (function(){
+const Theremin = (function(){
   
-  var thereminCanvas;
-  var frequencyLabel;
-  var volumeLabel;
-  var context;
-  var oscillator;
-  var gainNode;
-  var lowNote = 50; 
-  var highNote = 3000;
+  let thereminCanvas;
+  let frequencyLabel;
+  let volumeLabel;
+  let context;
+  let oscillator;
+  let gainNode;
+  let lowNote = 50; 
+  let highNote = 3000;
  
   // Constructor
-  var Theremin = function() {
+  const Theremin = function() {
     thereminCanvas = document.getElementById('theremin');
     frequencyLabel = document.getElementById('frequency');
     volumeLabel = document.getElementById('volume');
@@ -55,19 +55,19 @@ var Theremin = (function(){
   };
    
   Theremin.calculateNote = function(posX) {
-    var noteDifference = highNote - lowNote;
-    var noteOffset = (noteDifference / thereminCanvas.offsetWidth) * (posX - thereminCanvas.offsetLeft);
+    let noteDifference = highNote - lowNote;
+    let noteOffset = (noteDifference / thereminCanvas.offsetWidth) * (posX - thereminCanvas.offsetLeft);
     return lowNote + noteOffset;
   };
   
   Theremin.calculateVolume = function(posY) {
-    var volumeLevel = 1 - (((100 / thereminCanvas.offsetHeight) * (posY - thereminCanvas.offsetTop)) / 100);
+    let volumeLevel = 1 - (((100 / thereminCanvas.offsetHeight) * (posY - thereminCanvas.offsetTop)) / 100);
     return volumeLevel;
   };
   
   Theremin.calculateFrequency = function(x, y) {
-    var noteValue = Theremin.calculateNote(x);
-    var volumeValue = Theremin.calculateVolume(y);
+    let noteValue = Theremin.calculateNote(x);
+    let volumeValue = Theremin.calculateVolume(y);
   
     oscillator.frequency.value = noteValue;
     gainNode.gain.value = volumeValue;
@@ -88,5 +88,5 @@ var Theremin = (function(){
 
 // Initialize the page.
 window.onload = function() {
-  var theremin = new Theremin();
+  const theremin = new Theremin();
 }
