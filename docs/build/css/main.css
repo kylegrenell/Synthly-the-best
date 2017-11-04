@@ -1,0 +1,96 @@
+body, html {
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+html { 
+  background: url(../images/grid.png) no-repeat center center fixed; 
+  background-size: cover;
+  background-size: cover;
+}
+
+p {
+  color: rgb(14, 80, 176);
+  font-size: 20px;
+  background-color: pink;
+  line-height: 1.2em;
+  display: inline-block;
+  padding: 5px;
+}
+
+p:hover {
+  background-color: seagreen;
+  color: white;
+}
+ 
+#main-title {
+  padding-top: 20px;
+  font-size: 40px;
+  color: rgb(14, 80, 176);
+/*  font-weight: normal;*/
+}
+
+.menu-style {
+  border: 2px solid rgb(89, 136, 200);
+  border-width: 1px 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: black;
+}
+
+.menu-style li {
+    display: inline;
+}
+
+.menu-style a {
+    display: inline-block;
+    padding: 10px;
+}
+
+a:link {
+  color: black; 
+  text-decoration: none;
+  background-color: transparent; 
+}
+
+a:visited {
+  color: black; 
+  background-color: transparent; 
+  text-decoration: none
+
+}
+a:hover {
+  color: hotpink; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:active {
+  color: hotpink; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+#image-links {
+  padding-top: 75px;
+  max-width: 100%;
+  height: auto;
+  width: auto\9; 
+}
+
+.img-shape {
+  border-radius: 15px 50px;
+  padding: 10px;
+}
+
+img:hover {
+  opacity: 0.7;
+}
+
+#images {
+  content: justify;
+}
+

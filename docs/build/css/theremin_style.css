@@ -1,0 +1,85 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: rgb(220, 220, 220);
+	color: black;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+/*  font-weight: normal;*/
+  font-size: 40px;
+}
+
+h1:hover {
+  background-color: pink;
+  color: white;
+}
+
+#theremin {
+  margin-top: 20px;
+  top: 0px;
+  padding: 20px;
+  width: 90%;
+  height: 400px;
+  border-left: 5px solid rgb(232, 47, 35);
+  border-top: 5px solid rgb(232, 47, 35);
+  border-bottom: 20px solid rgb(60, 94, 168);
+  border-right: 20px dotted rgb(247, 195, 24);
+}
+
+#theremin:hover {
+	cursor: ew-resize;
+}
+
+#values-info {
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+
+.menu-style {
+    border: 2px solid snow;
+    border-width: 1px 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: black;
+}
+
+.menu-style li {
+    display: inline;
+}
+
+.menu-style a {
+    display: inline-block;
+    padding: 10px;
+}
+
+a:link {
+  color: pink; 
+  text-decoration: none;
+  background-color: transparent; 
+}
+
+a:visited {
+  color: pink; 
+  background-color: transparent; 
+  text-decoration: none
+
+}
+a:hover {
+  color: black; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:active {
+  color: black; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
